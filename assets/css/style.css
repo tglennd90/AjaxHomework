@@ -27,6 +27,11 @@ body {
     left: 50px;
 }
 
+#buttonArea button {
+    background-color: rebeccapurple;
+    color: white;
+}
+
 /* GIF Area */
 /* =================================== */
 
