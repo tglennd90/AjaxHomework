@@ -1,0 +1,52 @@
+body {
+    max-width: 960px;
+    max-height: 960px;
+    background-color: lightgrey;
+}
+
+/* Content Area */
+/* =================================== */
+
+#contentArea {
+    background-color: mediumspringgreen;
+    margin: 5% 55% 5% 55%;
+    width: 800px;
+    height: 1000px;
+    position: relative;
+}
+
+/* Button Area */
+/* =================================== */
+
+#buttonArea {
+    background-color: lightskyblue;
+    width: 700px;
+    height: 75px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+}
+
+/* GIF Area */
+/* =================================== */
+
+#gifArea {
+    background-color: lightpink;
+    width: 500px;
+    height: 85%;
+    position: absolute;
+    top: 95px;
+    left: 10px;
+}
+
+/* User Form */
+/* =================================== */
+
+#userForm {
+    background-color: plum;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 95px;
+    right: 10px;
+}
