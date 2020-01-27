@@ -48,9 +48,22 @@
 
         }
 
-    // GIPHY Call //
+    // Capture User Input and Transform into new button //
     // ============================================= //
+        
+        // var userValue = $(".userAdd").val().trim()
 
+        $(".userSubmit").on("click", function userButton() {
+            var userValue = $(".userAdd").val().trim()
+            //console.log(userValue)
+            var button = document.createElement('button')
+            var buttonText = document.createTextNode(userValue);
+
+            button.appendChild(buttonText)
+
+            buttonArea.appendChild(button)
+        });
+  
 // Logic //
 // ============================================= //
 
