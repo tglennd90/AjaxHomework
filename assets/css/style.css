@@ -38,7 +38,7 @@ body {
 #gifArea {
     background-color: lightpink;
     width: 500px;
-    height: 85%;
+    height: fit-content;
     position: absolute;
     top: 95px;
     left: 10px;
@@ -54,4 +54,8 @@ body {
     position: absolute;
     top: 95px;
     right: 10px;
+}
+
+.test:hover {
+    cursor: pointer;
 }
