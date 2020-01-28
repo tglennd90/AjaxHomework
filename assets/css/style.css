@@ -1,60 +1,72 @@
 body {
     max-width: 960px;
-    background-color: lightgrey;
+    background-color: rgba(0, 0, 0, 0.753);
 }
 
 /* Content Area */
 /* =================================== */
 
 #contentArea {
-    background-color: mediumspringgreen;
-    /* margin: 5% 55% 5% 55%; */
-    width: 800px;
+    background-color: ghostwhite;
+    width: 565px;
     height: fit-content;
-    position: relative;
+    margin-left: 10%;    
 }
 
 /* Button Area */
 /* =================================== */
 
 #buttonArea {
-    background-color: lightskyblue;
-    width: 700px;
-    height: 75px;
-    position: absolute;
-    top: 10px;
-    left: 50px;
+    margin-left: 5%;
+    background-color: darkslategray;
+    width: 500px;
 }
 
 #buttonArea button {
-    background-color: rebeccapurple;
-    color: white;
+    background-color: ghostwhite;
+    border-color: darkslategray;
+    color: darkslategray;
+    margin: 0.5%;
+    font-weight: 800;
 }
 
 /* GIF Area */
 /* =================================== */
 
 #gifArea {
-    background-color: lightpink;
+    background-color: darkslategray;
+    color: springgreen;
     width: 500px;
-    height: fit-content;
-    position: absolute;
-    top: 95px;
-    left: 10px;
+    margin-left: 5%;
+    align-self: center;
 }
 
 /* User Form */
 /* =================================== */
 
 #userForm {
-    background-color: plum;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 95px;
-    right: 10px;
+    background-color: darkslategray;
+    color: springgreen;
+    font-size: 25px;
+    width: 500px;
+    height: fit-content;
+    margin-left: 5%;
 }
 
 .imgx:hover {
     cursor: pointer;
+}
+
+.formP {
+    margin: 0% 13%;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.userAdd {
+    margin: 0% 30%;
+}
+
+.userSubmit {
+    margin: 0% 35%;
 }

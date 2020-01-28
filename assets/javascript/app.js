@@ -4,7 +4,7 @@
     // Arrays //
     // ============================================= //
 
-        var topics = ["Ace Ventura", "Fletcher Reede", "Bruce Nolan", "Lloyd Christmas", "Dick Harper", "Grinch", "Stanley Ipkiss"];
+        var topics = ["Ace Ventura", "Fletcher Reede", "Bruce Nolan", "Lloyd Christmas", "Grinch", "Stanley Ipkiss"];
 
     // Objects //
     // ============================================= //
@@ -85,7 +85,6 @@
                     console.log(response.data[i])
                     
                     var img = $("<img>");
-                    console.log(response.data[i].images.original.url)
                     
                     img.attr("src", response.data[i].images.original_still.url)
                     img.attr("class", "imgx")
@@ -114,7 +113,6 @@
                     var state = $(this).attr("data-state")
                     var still = $(this).attr("data-still")
                     var animate = $(this).attr("data-animate")
-                    console.log(state)
                 
                     if (state === "still") {
                         $(this).attr("data-state", "animate")
