@@ -81,7 +81,7 @@
             xhr.done(function(response) { 
 
                 reset()
-    
+            
                 for (var i = 0; i < response.data.length; i++) {
                     console.log(response.data[i])
                     
@@ -95,8 +95,18 @@
                     img.attr("data-state", "still")
                     img.attr("style", "width: 125px")
                     img.attr("style", "height: 125px")
-    
-                    gifArea.prepend(img)
+
+                    var gifData = $("<div class=gif>");
+                    var rating = response.rating;
+                    var ratingP = $("<p>").text("Rating: " + rating);
+                    var title = response.title;
+                    var titleP = $("<p>").text("Title: " + title);
+                    
+                    gifData.append(titleP);
+                    gifData.append(ratingP);
+                    gifData.append(img)
+                    
+                    gifArea.prepend(gifData)
     
                 }
                 
