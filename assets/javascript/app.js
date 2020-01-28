@@ -75,7 +75,7 @@
             var userValue =  $(this).attr("data-searchName")
              
     
-            var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + userValue + "&api_key=" + APIKey + "&limit=10");
+            var xhr = $.get("https://api.giphy.com/v1/gifs/search?q=" + userValue + "&api_key=" + APIKey + "&limit=10");
             
             xhr.done(function(response) { 
 
