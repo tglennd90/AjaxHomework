@@ -15,13 +15,10 @@
     // ID Grabbers //
     // ============================================= //
         
-        const contentArea = document.getElementById("contentArea");
-        const buttonArea = document.getElementById("buttonArea");
+        const contentArea = $("#contentArea");
+        const buttonArea = $("#buttonArea");
         const gifArea = $("#gifArea");
-        const userForm = document.getElementById("userForm");
-
-        
-
+        const userForm = $("#userForm");
 
 // Functions //
 // ============================================= //
@@ -40,9 +37,9 @@
                 button.setAttribute("data-searchName", topics[i])
                 button.addEventListener("click", renderPage)
 
-                button.appendChild(buttonText)
+                button.append(buttonText)
 
-                buttonArea.appendChild(button)
+                buttonArea.append(button)
                 
             }
 
@@ -62,9 +59,9 @@
             button.setAttribute("data-searchName", userValue)
             button.addEventListener("click", renderPage)
 
-            button.appendChild(buttonText)
+            button.append(buttonText)
 
-            buttonArea.appendChild(button)
+            buttonArea.append(button)
         });
 
     // GIPHY Call //
@@ -105,7 +102,7 @@
                     gifData.append(titleP);
                     gifData.append(ratingP);
                     gifData.append(img)
-                    
+
                     gifArea.prepend(gifData)
     
                 }
