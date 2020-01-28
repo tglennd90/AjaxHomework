@@ -1,6 +1,5 @@
 body {
     max-width: 960px;
-    max-height: 960px;
     background-color: lightgrey;
 }
 
@@ -11,7 +10,7 @@ body {
     background-color: mediumspringgreen;
     /* margin: 5% 55% 5% 55%; */
     width: 800px;
-    height: 1000px;
+    height: fit-content;
     position: relative;
 }
 

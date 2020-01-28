@@ -4,7 +4,7 @@
     // Arrays //
     // ============================================= //
 
-        var topics = ["Baseball", "Basketball", "Hockey", "Soccer", "Football", "Ultimate Frisbee", "Dodgeball"];
+        var topics = ["Ace Ventura", "Fletcher Reede", "Bruce Nolan", "Lloyd Christmas", "Dick Harper", "Grinch", "Stanley Ipkiss"];
 
     // Objects //
     // ============================================= //
@@ -41,6 +41,7 @@
 
                 buttonArea.append(button)
                 
+                
             }
 
         }
@@ -62,6 +63,7 @@
             button.append(buttonText)
 
             buttonArea.append(button)
+
         });
 
     // GIPHY Call //
@@ -94,14 +96,14 @@
                     img.attr("style", "height: 125px")
 
                     var gifData = $("<div class=gif>");
-                    var rating = response.rating;
+                    var rating = response.data[i].rating;
                     var ratingP = $("<p>").text("Rating: " + rating);
-                    var title = response.title;
+                    var title = response.data[i].title;
                     var titleP = $("<p>").text("Title: " + title);
                     
                     gifData.append(titleP);
                     gifData.append(ratingP);
-                    gifData.append(img)
+                    gifData.append(img);
 
                     gifArea.prepend(gifData)
     
