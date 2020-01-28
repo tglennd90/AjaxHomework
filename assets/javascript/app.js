@@ -17,7 +17,7 @@
         
         const contentArea = document.getElementById("contentArea");
         const buttonArea = document.getElementById("buttonArea");
-        const gifArea = document.getElementById("gifArea");
+        const gifArea = $("#gifArea");
         const userForm = document.getElementById("userForm");
 
         
@@ -37,6 +37,8 @@
                 var buttonText = document.createTextNode(topics[i]);
 
                 button.setAttribute("class", "btn")
+                button.setAttribute("data-searchName", topics[i])
+                button.addEventListener("click", renderPage)
 
                 button.appendChild(buttonText)
 
@@ -51,12 +53,14 @@
 
         $(".userSubmit").on("click", function userButton() {
 
-            var userValue = $(".userAdd").val().trim()
-            
+            var userValue = $(".userAdd").val()
+                    
             var button = document.createElement('button')
             var buttonText = document.createTextNode(userValue);
 
             button.setAttribute("class", "btn")
+            button.setAttribute("data-searchName", userValue)
+            button.addEventListener("click", renderPage)
 
             button.appendChild(buttonText)
 
@@ -66,49 +70,64 @@
     // GIPHY Call //
     // ============================================= //
 
-        var APIKey = "vkcrV6fIMdEpaJsBPiUwvn3J4DG4zj3w";
+        function renderPage() {
+            var APIKey = "vkcrV6fIMdEpaJsBPiUwvn3J4DG4zj3w";
 
-        var q;
-
-        var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + q + "&api_key=" + APIKey + "&limit=10");
-        
-        xhr.done(function(response) { 
-
-            for (var i = 0; i < response.data.length; i++) {
-                console.log(response.data[i])
-                
-                var img = document.createElement("img");
-                
-                img.src = response.data[i].images.original_still.url
-                $("img").attr("class", "test")
-                img.style = "width: 125px"
-                img.style = "height: 125px"
-
-                gifArea.prepend(img)
-
-            }
+            var userValue =  $(this).attr("data-searchName")
+             
+    
+            var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + userValue + "&api_key=" + APIKey + "&limit=10");
             
-            
-        });
+            xhr.done(function(response) { 
+    
+                for (var i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i])
+                    
+                    var img = $("<img>");
+                    console.log(response.data[i].images.original.url)
+                    
+                    img.attr("src", response.data[i].images.original_still.url)
+                    img.attr("class", "imgx")
+                    img.attr("data-still", response.data[i].images.original_still.url)
+                    img.attr("data-animate", response.data[i].images.original.url)
+                    img.attr("data-state", "still")
+                    img.attr("style", "width: 125px")
+                    img.attr("style", "height: 125px")
+    
+                    gifArea.prepend(img)
+    
+                }
+                
+                $(".imgx").on("click", function() {
 
+                    var state = $(this).attr("data-state")
+                    var still = $(this).attr("data-still")
+                    var animate = $(this).attr("data-animate")
+                    console.log(state)
+                
+                    if (state === "still") {
+                        $(this).attr("data-state", "animate")
+                        $(this).attr("src", animate)
+                    } else {
+                        $(this).attr("data-state", "still")
+                        $(this).attr("src", still)
+                    }
+                
+                });
+             
+                
+            });
+        }
+
+
+        buttons()
     // Pause/Unpause GIFs //
     // ============================================= //
 
-        $(".test").on("click", function() {
-
-            var still = response.data[i].images.original_still.url
-            var move = response.data[i].images.original.url
-
-            if (img.src === still) {
-                img.src === move
-            } else {
-                img.src === still
-            }
-
-        });
+      
   
 // Logic //
 // ============================================= //
 
-        buttons();
+
         
