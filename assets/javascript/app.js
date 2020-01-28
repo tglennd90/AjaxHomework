@@ -79,6 +79,8 @@
             var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + userValue + "&api_key=" + APIKey + "&limit=10");
             
             xhr.done(function(response) { 
+
+                reset()
     
                 for (var i = 0; i < response.data.length; i++) {
                     console.log(response.data[i])
@@ -119,15 +121,16 @@
             });
         }
 
-
-        buttons()
-    // Pause/Unpause GIFs //
+    // Reset gifArea //
     // ============================================= //
 
-      
+        function reset() {
+            gifArea.html(" ");
+        }
   
 // Logic //
 // ============================================= //
 
+    buttons()
 
         
